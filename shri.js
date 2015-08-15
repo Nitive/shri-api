@@ -50,7 +50,7 @@ var responses = {};
 for (i = 0; i < 3; i++) {
     var request = requests[i];
     var callback = function (error, result) {
-        responses[request] = result;
+        responses[this.request] = result;
         var l = [];
         for (K in responses)
             l.push(K);
@@ -83,5 +83,5 @@ for (i = 0; i < 3; i++) {
         }
     };
 
-    getData(request, callback);
+    getData(request, callback.bind({request: request}));
 }
