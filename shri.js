@@ -44,6 +44,12 @@ function getData(url, callback) {
 /**
  * Ваши изменения ниже
  */
+
+/**
+ * Описать:
+ *   - общий request для всех callbacks
+ *   - глобальные переменные i, l, K, j
+ */
 var requests = ['/countries', '/cities', '/populations'];
 var responses = {};
 
