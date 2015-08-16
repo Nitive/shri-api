@@ -55,7 +55,7 @@ function getData(url, callback) {
  * @param {Object} obj
  * @return {Number} количество ключей у объекта
  */
-var keysCount = function(obj) {
+var countKeys = function(obj) {
     var count = 0;
     for (var key in obj) {
         if (obj.hasOwnProperty(key)) count++;
@@ -192,7 +192,7 @@ App.prototype.askAgain = function() {
  */
 
 App.prototype.askUser = function() {
-    if (keysCount(this.responses) !== this.requests.length)
+    if (countKeys(this.responses) !== this.requests.length)
         return
 
     var cities = []
@@ -210,6 +210,12 @@ App.prototype.askUser = function() {
 App.prototype.addData = function(request, result) {
     this.responses[request] = result;
 }
+
+/**
+ * Отправляет запросы на адреса из this.requests
+ * Добавляет полученные данные в this.responses
+ * Вызывает this.askUser() (выполнется только когда получены все данные)
+*/
 
 App.prototype.getData = function() {
     var self = this;
