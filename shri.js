@@ -46,12 +46,6 @@ function getData(url, callback) {
  */
 
 /**
- * Описать:
- *   - общий request для всех callbacks
- *   - глобальные переменные i, l, K, j
- */
-
-/**
  * @param {Object} obj
  * @return {Number} количество ключей у объекта
  */
